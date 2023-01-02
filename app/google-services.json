@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "651803990010",
+    "project_id": "ceramah-sekitar",
+    "storage_bucket": "ceramah-sekitar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651803990010:android:bfeeb059c7f4369fd87643",
+        "android_client_info": {
+          "package_name": "com.example.cariceramah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651803990010-qv8pisnnqgr119ds7q0mpdeqt24r1k5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8cN4bSk5niMcnFVIeHpFbzT5kxMLd4pA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651803990010-qv8pisnnqgr119ds7q0mpdeqt24r1k5f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+
+
+android {
+    namespace 'com.example.cariceramah'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.cariceramah"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+
+        debug {
+            buildConfigField "String", "SERVER_URL", "\"https://dev.cariceramah.online/\""
+            buildConfigField "String", "API_KEY", "\"T7k3bAK24JAqVz4E7Wkqepeq\""
+        }
+        release {
+            buildConfigField "String", "SERVER_URL", "\"https://dev.cariceramah.online/\""
+            buildConfigField "String", "API_KEY", "\"T7k3bAK24JAqVz4E7Wkqepeq\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.1.1'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
+    kotlinOptions{
+        freeCompilerArgs += [
+                "-Xjvm-default=all",
+        ]
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation "com.google.firebase:firebase-messaging-ktx:23.1.0"
+
+    implementation("androidx.compose.runtime:runtime:$compose_ui_version")
+
+    implementation 'com.google.dagger:dagger:2.44.2'
+    implementation 'com.google.dagger:dagger-android-support:2.44.2'
+    kapt 'com.google.dagger:dagger-compiler:2.44.2'
+    kapt 'com.google.dagger:dagger-android-processor:2.44.2'
+
+    implementation "androidx.activity:activity-compose:1.3.1"
+    implementation "androidx.compose.ui:ui:$compose_ui_version"
+    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
+    implementation "androidx.compose.material:material:$compose_ui_version"
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+
+    implementation ('com.squareup.retrofit2:retrofit:2.6.1') {
+        // exclude Retrofit’s OkHttp dependency module and define your own module import
+        exclude module: 'okhttp'
+    }
+
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation "com.google.accompanist:accompanist-pager:0.23.1"
+
+    implementation 'com.squareup.retrofit2:converter-jackson:2.0.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+
+
+
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    implementation project (":basecomponent")
+    implementation project (":features:onboarding")
+    implementation project (":features:homescreen")
+}

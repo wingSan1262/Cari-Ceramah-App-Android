@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Cariceramah" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">#FF30608e</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_round_resize</item>
+    </style>
+</resources>
